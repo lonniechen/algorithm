@@ -23,13 +23,13 @@ public class BubbleSort {
 	public void sort() {
 		int temp;
 		for (int i = 0; i < arrayLength; i++) {
-			for (int j = arrayLength - 1 ; j > i; j--) {
+			for (int j = arrayLength - 1; j > i; j--) {
 				compareCount++;
 				if (sortedArray[j] < sortedArray[j - 1]) {
 					swapCount++;
-					temp = sortedArray[j];
-					sortedArray[j] = sortedArray[j - 1];
-					sortedArray[j - 1] = temp;
+					sortedArray[j] = sortedArray[j] + sortedArray[j - 1];
+					sortedArray[j - 1] = sortedArray[j] - sortedArray[j - 1];
+					sortedArray[j] = sortedArray[j] - sortedArray[j - 1];
 				}
 			}
 		}

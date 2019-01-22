@@ -21,30 +21,31 @@ public class SelectionSort {
 	}
 
 	public void sort() {
-		int min;
-		int temp;
+		int minIndex;
 		for (int i = 0; i < arrayLength; i++) {
-			min = i;
-
+			minIndex = i;
 			for (int j = i + 1; j < arrayLength; j++) {
-				if (sortedArray[j] < sortedArray[min]) {
-					min = j;
+				compareCount++;
+				if (sortedArray[j] < sortedArray[minIndex]) {
+					minIndex = j;
 				}
 			}
-
-			temp = sortedArray[min];
-			sortedArray[min] = sortedArray[i];
-			sortedArray[i] = temp;
+			if (minIndex != i) {
+				swapCount++;
+				sortedArray[minIndex] = sortedArray[minIndex] + sortedArray[i];
+				sortedArray[i] = sortedArray[minIndex] - sortedArray[i];
+				sortedArray[minIndex] = sortedArray[minIndex] - sortedArray[i];
+			}
 		}
 	}
 
 	public static void main(String[] args) {
-		SelectionSort bubbleSort = new SelectionSort(ArrayData.originalDataSet);
-		bubbleSort.sort();
-		System.out.println(Arrays.toString(bubbleSort.originalArray));
-		System.out.println(Arrays.toString(bubbleSort.sortedArray));
-		System.out.println(bubbleSort.swapCount);
-		System.out.println(bubbleSort.compareCount);
+		SelectionSort selectionSort = new SelectionSort(ArrayData.originalDataSet);
+		selectionSort.sort();
+		System.out.println(Arrays.toString(selectionSort.originalArray));
+		System.out.println(Arrays.toString(selectionSort.sortedArray));
+		System.out.println(selectionSort.swapCount);
+		System.out.println(selectionSort.compareCount);
 	}
 
 }
