@@ -3,36 +3,30 @@ package performance;
 import sort.BubbleSort;
 
 public class BubbleSortPerformance {
+
 	public static void main(String[] args) {
 
-		long startTime, endTime;
 		System.out.println("BubbleSort");
 //		unsorted data
-		BubbleSort bubbleUnsorted = new BubbleSort(LargeDataSet.unsortedData);
+		System.out.println("---- Unsorted Data ----");
+		performanceTest(LargeDataSet.unsortedData);
+//		sorted data
+		System.out.println("---- Sorted Data ---");
+		performanceTest(LargeDataSet.sortedData);
+//		reverse sorted data
+		System.out.println("---- Reverse Sorted Data ----");
+		performanceTest(LargeDataSet.reverseData);
+	}
+
+	private static void performanceTest(int[] dataSet) {
+		long startTime;
+		long endTime;
+		BubbleSort bubbleUnsorted = new BubbleSort(dataSet);
 		startTime = System.currentTimeMillis();
 		bubbleUnsorted.sort();
 		endTime = System.currentTimeMillis();
-		System.out.println("---- Unsorted Data ----");
 		System.out.println("Time : " + (endTime - startTime));
 		System.out.println("Compare Count : " + bubbleUnsorted.getCompareCount());
 		System.out.println("Swap Count : " + bubbleUnsorted.getSwapCount());
-//		sorted data
-		BubbleSort bubbleSorted = new BubbleSort(LargeDataSet.sortedData);
-		startTime = System.currentTimeMillis();
-		bubbleSorted.sort();
-		endTime = System.currentTimeMillis();
-		System.out.println("---- Sorted Data ---");
-		System.out.println("Time : " + (endTime - startTime));
-		System.out.println("Compare Count : " + bubbleSorted.getCompareCount());
-		System.out.println("Swap Count : " + bubbleSorted.getSwapCount());
-//		reverse sorted data
-		BubbleSort bubbleReverseSorted = new BubbleSort(LargeDataSet.reverseSortedData);
-		startTime = System.currentTimeMillis();
-		bubbleReverseSorted.sort();
-		endTime = System.currentTimeMillis();
-		System.out.println("---- Reverse Sorted Data ----");
-		System.out.println("Time : " + (endTime - startTime));
-		System.out.println("Compare Count : " + bubbleReverseSorted.getCompareCount());
-		System.out.println("Swap Count : " + bubbleReverseSorted.getSwapCount());
 	}
 }

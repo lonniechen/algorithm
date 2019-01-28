@@ -5,8 +5,8 @@ public class BubbleSort {
 	private int[] originalArray;
 	public int[] sortedArray;
 	private int arrayLength;
-	private int compareCount;
-	private int swapCount;
+	private long compareCount;
+	private long swapCount;
 
 	public BubbleSort(int[] originalDataSet) {
 		originalArray = new int[originalDataSet.length];
@@ -33,11 +33,11 @@ public class BubbleSort {
 		}
 	}
 
-	public int getCompareCount() {
+	public long getCompareCount() {
 		return compareCount;
 	}
 
-	public int getSwapCount() {
+	public long getSwapCount() {
 		return swapCount;
 	}
 

@@ -11,7 +11,7 @@ public class LargeDataSet {
 
 	static public int[] unsortedData = createTestDataSet("src/main/resources/unsortedData.csv");
 	static public int[] sortedData = createTestDataSet("src/main/resources/sortedData.csv");
-	static public int[] reverseSortedData = createTestDataSet("src/main/resources/reverseSortedData.csv");
+	static public int[] reverseData = createTestDataSet("src/main/resources/reverseData.csv");
 
 	static private int[] createTestDataSet(String filePath) {
 

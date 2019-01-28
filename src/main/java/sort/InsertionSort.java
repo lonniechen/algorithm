@@ -5,8 +5,8 @@ public class InsertionSort {
 	private int[] originalArray;
 	public int[] sortedArray;
 	private int arrayLength;
-	private int moveCount;
-	private int insertCount;
+	private long moveCount;
+	private long insertCount;
 
 	public InsertionSort(int[] originalDataSet) {
 		originalArray = new int[originalDataSet.length];
@@ -34,11 +34,11 @@ public class InsertionSort {
 		}
 	}
 
-	public int getMoveCount() {
+	public long getMoveCount() {
 		return moveCount;
 	}
 
-	public int getInsertCount() {
+	public long getInsertCount() {
 		return insertCount;
 	}
 

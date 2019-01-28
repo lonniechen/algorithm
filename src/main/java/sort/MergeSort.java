@@ -6,8 +6,8 @@ public class MergeSort {
 	private int[] tempArray;
 	public int[] sortedArray;
 	private int arrayLength;
-	private int compareCount;
-	private int assignCount;
+	private long compareCount;
+	private long assignCount;
 
 	public MergeSort(int[] originalDataSet) {
 		originalArray = new int[originalDataSet.length];
@@ -56,11 +56,11 @@ public class MergeSort {
 		}
 	}
 
-	public int getCompareCount() {
+	public long getCompareCount() {
 		return compareCount;
 	}
 
-	public int getAssignCount() {
+	public long getAssignCount() {
 		return assignCount;
 	}
 
