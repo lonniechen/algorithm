@@ -26,6 +26,7 @@ public class SelectionSortPerformance {
 		endTime = System.currentTimeMillis();
 		System.out.println("Time : " + (endTime - startTime));
 		System.out.println("Compare Count : " + selectionUnsorted.getCompareCount());
+		System.out.println("Index Change Count : " + selectionUnsorted.getIndexChangeCount());
 		System.out.println("Swap Count : " + selectionUnsorted.getSwapCount());
 	}
 }

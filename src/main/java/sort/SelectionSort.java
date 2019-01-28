@@ -6,6 +6,7 @@ public class SelectionSort {
 	public int[] sortedArray;
 	private int arrayLength;
 	private long compareCount;
+	private long indexChangeCount;
 	private long swapCount;
 
 	public SelectionSort(int[] originalDataSet) {
@@ -25,6 +26,7 @@ public class SelectionSort {
 			for (int j = i + 1; j < arrayLength; j++) {
 				compareCount++;
 				if (sortedArray[j] < sortedArray[minIndex]) {
+					indexChangeCount++;
 					minIndex = j;
 				}
 			}
@@ -40,6 +42,10 @@ public class SelectionSort {
 
 	public long getCompareCount() {
 		return compareCount;
+	}
+
+	public long getIndexChangeCount() {
+		return indexChangeCount;
 	}
 
 	public long getSwapCount() {

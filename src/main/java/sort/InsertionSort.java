@@ -23,7 +23,7 @@ public class InsertionSort {
 			int key = sortedArray[i];
 			int j;
 			for (j = i - 1; j >= 0; j--) {
-				if (sortedArray[j] < key) {
+				if (sortedArray[j] <= key) {
 					break;
 				}
 				moveCount++;
