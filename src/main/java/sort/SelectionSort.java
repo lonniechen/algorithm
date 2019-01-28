@@ -1,7 +1,5 @@
 package sort;
 
-import java.util.Arrays;
-
 public class SelectionSort {
 
 	private int[] originalArray;
@@ -31,6 +29,7 @@ public class SelectionSort {
 				}
 			}
 			if (minIndex != i) {
+//				swapping two elements
 				swapCount++;
 				sortedArray[minIndex] = sortedArray[minIndex] + sortedArray[i];
 				sortedArray[i] = sortedArray[minIndex] - sortedArray[i];
@@ -39,13 +38,12 @@ public class SelectionSort {
 		}
 	}
 
-	public static void main(String[] args) {
-		SelectionSort selectionSort = new SelectionSort(ArrayData.originalDataSet);
-		selectionSort.sort();
-		System.out.println(Arrays.toString(selectionSort.originalArray));
-		System.out.println(Arrays.toString(selectionSort.sortedArray));
-		System.out.println(selectionSort.swapCount);
-		System.out.println(selectionSort.compareCount);
+	public int getCompareCount() {
+		return compareCount;
+	}
+
+	public int getSwapCount() {
+		return swapCount;
 	}
 
 }
