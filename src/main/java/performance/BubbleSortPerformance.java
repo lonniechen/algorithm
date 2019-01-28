@@ -7,6 +7,15 @@ public class BubbleSortPerformance {
 
 		long startTime, endTime;
 		System.out.println("BubbleSort");
+//		unsorted data
+		BubbleSort bubbleUnsorted = new BubbleSort(LargeDataSet.unsortedData);
+		startTime = System.currentTimeMillis();
+		bubbleUnsorted.sort();
+		endTime = System.currentTimeMillis();
+		System.out.println("---- Unsorted Data ----");
+		System.out.println("Time : " + (endTime - startTime));
+		System.out.println("Compare Count : " + bubbleUnsorted.getCompareCount());
+		System.out.println("Swap Count : " + bubbleUnsorted.getSwapCount());
 //		sorted data
 		BubbleSort bubbleSorted = new BubbleSort(LargeDataSet.sortedData);
 		startTime = System.currentTimeMillis();
@@ -25,16 +34,5 @@ public class BubbleSortPerformance {
 		System.out.println("Time : " + (endTime - startTime));
 		System.out.println("Compare Count : " + bubbleReverseSorted.getCompareCount());
 		System.out.println("Swap Count : " + bubbleReverseSorted.getSwapCount());
-		
-		
-//		unsorted data
-		BubbleSort bubbleUnsorted = new BubbleSort(LargeDataSet.unsortedData);
-		startTime = System.currentTimeMillis();
-		bubbleUnsorted.sort();
-		endTime = System.currentTimeMillis();
-		System.out.println("---- Unsorted Data ----");
-		System.out.println("Time : " + (endTime - startTime));
-		System.out.println("Compare Count : " + bubbleUnsorted.getCompareCount());
-		System.out.println("Swap Count : " + bubbleUnsorted.getSwapCount());
 	}
 }
