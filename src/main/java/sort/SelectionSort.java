@@ -1,9 +1,9 @@
 package sort;
 
-public class SelectionSort {
+public class SelectionSort implements ISort {
 
 	private int[] originalArray;
-	public int[] sortedArray;
+	private int[] sortedArray;
 	private int arrayLength;
 	private long compareCount;
 	private long indexChangeCount;
@@ -19,6 +19,7 @@ public class SelectionSort {
 		swapCount = 0;
 	}
 
+	@Override
 	public void sort() {
 		int minIndex;
 		for (int i = 0; i < arrayLength; i++) {
@@ -38,6 +39,11 @@ public class SelectionSort {
 				sortedArray[minIndex] = sortedArray[minIndex] - sortedArray[i];
 			}
 		}
+	}
+
+	@Override
+	public int[] getSortedArrary() {
+		return this.sortedArray;
 	}
 
 	public long getCompareCount() {

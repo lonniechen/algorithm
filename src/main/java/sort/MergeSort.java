@@ -1,10 +1,10 @@
 package sort;
 
-public class MergeSort {
+public class MergeSort implements ISort {
 
 	private int[] originalArray;
 	private int[] tempArray;
-	public int[] sortedArray;
+	private int[] sortedArray;
 	private int arrayLength;
 	private long compareCount;
 	private long assignCount;
@@ -20,6 +20,7 @@ public class MergeSort {
 		assignCount = 0;
 	}
 
+	@Override
 	public void sort() {
 		merge(0, arrayLength - 1);
 	}
@@ -54,6 +55,11 @@ public class MergeSort {
 				sortedArray[i] = tempArray[i];
 			}
 		}
+	}
+
+	@Override
+	public int[] getSortedArrary() {
+		return this.sortedArray;
 	}
 
 	public long getCompareCount() {

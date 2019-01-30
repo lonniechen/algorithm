@@ -1,9 +1,9 @@
 package sort;
 
-public class BubbleSort {
+public class BubbleSort implements ISort {
 
 	private int[] originalArray;
-	public int[] sortedArray;
+	private int[] sortedArray;
 	private int arrayLength;
 	private long compareCount;
 	private long swapCount;
@@ -18,6 +18,7 @@ public class BubbleSort {
 		swapCount = 0;
 	}
 
+	@Override
 	public void sort() {
 		for (int i = 0; i < arrayLength; i++) {
 			for (int j = arrayLength - 1; j > i; j--) {
@@ -31,6 +32,11 @@ public class BubbleSort {
 				}
 			}
 		}
+	}
+
+	@Override
+	public int[] getSortedArrary() {
+		return this.sortedArray;
 	}
 
 	public long getCompareCount() {

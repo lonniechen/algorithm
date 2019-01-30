@@ -1,9 +1,9 @@
 package sort;
 
-public class InsertionSort {
+public class InsertionSort implements ISort {
 
 	private int[] originalArray;
-	public int[] sortedArray;
+	private int[] sortedArray;
 	private int arrayLength;
 	private long moveCount;
 	private long insertCount;
@@ -18,6 +18,7 @@ public class InsertionSort {
 		insertCount = 0;
 	}
 
+	@Override
 	public void sort() {
 		for (int i = 1; i < arrayLength; i++) {
 			int key = sortedArray[i];
@@ -32,6 +33,11 @@ public class InsertionSort {
 			insertCount++;
 			sortedArray[j + 1] = key;
 		}
+	}
+
+	@Override
+	public int[] getSortedArrary() {
+		return this.sortedArray;
 	}
 
 	public long getMoveCount() {

@@ -7,23 +7,23 @@ public class BubbleSortTest {
 
 	@Test
 	public void testForDataSet1() {
-		BubbleSort bubbleSort = new BubbleSort(TestData.testDataSet1);
+		ISort bubbleSort = new BubbleSort(TestData.testDataSet1);
 		bubbleSort.sort();
-		Assert.assertArrayEquals(TestData.result1, bubbleSort.sortedArray);
+		Assert.assertArrayEquals(TestData.result1, bubbleSort.getSortedArrary());
 	}
 	
 	@Test
 	public void testForDataSet2() {
-		BubbleSort bubbleSort = new BubbleSort(TestData.testDataSet2);
+		ISort bubbleSort = new BubbleSort(TestData.testDataSet2);
 		bubbleSort.sort();
-		Assert.assertArrayEquals(TestData.result2, bubbleSort.sortedArray);
+		Assert.assertArrayEquals(TestData.result2, bubbleSort.getSortedArrary());
 	}
 	
 	@Test
 	public void testForDataSet3() {
-		BubbleSort bubbleSort = new BubbleSort(TestData.testDataSet3);
+		ISort bubbleSort = new BubbleSort(TestData.testDataSet3);
 		bubbleSort.sort();
-		Assert.assertArrayEquals(TestData.result3, bubbleSort.sortedArray);
+		Assert.assertArrayEquals(TestData.result3, bubbleSort.getSortedArrary());
 	}
 	
 }
