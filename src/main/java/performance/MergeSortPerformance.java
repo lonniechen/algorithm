@@ -2,23 +2,30 @@ package performance;
 
 import sort.MergeSort;
 
-public class MergeSortPerformance {
-	
-	public static void main(String[] args) {
+public class MergeSortPerformance implements IPerformance{
 
+	public static void main(String[] args) {
+		IPerformance mergeSortPerformance = new MergeSortPerformance();
+		mergeSortPerformance.performanceTest();
+	}
+	
+	@Override
+	public void performanceTest() {
 		System.out.println("MergeSort");
 //	    unsorted data
 		System.out.println("---- Unsorted Data ----");
-		performanceTest(LargeDataSet.unsortedData);
+		test(LargeDataSet.unsortedData);
 //	    sorted data
 		System.out.println("---- Sorted Data ---");
-		performanceTest(LargeDataSet.sortedData);
+		test(LargeDataSet.sortedData);
 //	    reverse sorted data
 		System.out.println("---- Reverse Sorted Data ----");
-		performanceTest(LargeDataSet.reverseData);
+		test(LargeDataSet.reverseData);
+		System.out.println();
+		System.out.println();
 	}
 
-	private static void performanceTest(int[] dataSet) {
+	private void test(int[] dataSet) {
 		long startTime;
 		long endTime;
 		MergeSort mergeUnsorted = new MergeSort(dataSet);
