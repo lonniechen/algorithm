@@ -26,4 +26,18 @@ public class InsertionSortTest {
 		Assert.assertArrayEquals(TestData.result3, insertionSort.getSortedArrary());
 	}
 
+	@Test
+	public void testForDataSet4() {
+		ISort insertionSort = new InsertionSort(TestData.testDataSet4);
+		insertionSort.sort();
+		Assert.assertArrayEquals(TestData.result4, insertionSort.getSortedArrary());
+	}
+
+	@Test
+	public void testForDataSet5() {
+		ISort insertionSort = new InsertionSort(TestData.testDataSet5);
+		insertionSort.sort();
+		Assert.assertArrayEquals(TestData.result5, insertionSort.getSortedArrary());
+	}
+
 }

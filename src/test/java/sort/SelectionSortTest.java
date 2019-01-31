@@ -26,4 +26,18 @@ public class SelectionSortTest {
 		Assert.assertArrayEquals(TestData.result3, selectionSort.getSortedArrary());
 	}
 
+	@Test
+	public void testForDataSet4() {
+		ISort selectionSort = new SelectionSort(TestData.testDataSet4);
+		selectionSort.sort();
+		Assert.assertArrayEquals(TestData.result4, selectionSort.getSortedArrary());
+	}
+
+	@Test
+	public void testForDataSet5() {
+		ISort selectionSort = new SelectionSort(TestData.testDataSet5);
+		selectionSort.sort();
+		Assert.assertArrayEquals(TestData.result5, selectionSort.getSortedArrary());
+	}
+
 }
