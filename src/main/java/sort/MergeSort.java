@@ -22,38 +22,42 @@ public class MergeSort implements ISort {
 
 	@Override
 	public void sort() {
-		merge(0, arrayLength - 1);
+		divide(0, arrayLength - 1);
 	}
 
-	public void merge(int startIndex, int endIndex) {
-		if (endIndex != startIndex) {
+	private void divide(int startIndex, int endIndex) {
+		if (startIndex != endIndex) {
 			int midIndex = (startIndex + endIndex) / 2;
-			merge(startIndex, midIndex);
-			merge(midIndex + 1, endIndex);
-			int leftIndex = startIndex;
-			int rightIndex = midIndex + 1;
-			int tempIndex = startIndex;
-			while (leftIndex <= midIndex && rightIndex <= endIndex) {
-				compareCount++;
-				assignCount++;
-				if (sortedArray[leftIndex] <= sortedArray[rightIndex]) {
-					tempArray[tempIndex++] = sortedArray[leftIndex++];
-				} else {
-					tempArray[tempIndex++] = sortedArray[rightIndex++];
-				}
-			}
-			while (leftIndex <= midIndex) {
-				assignCount++;
+			divide(startIndex, midIndex);
+			divide(midIndex + 1, endIndex);
+			merge(startIndex, midIndex, endIndex);
+		}
+	}
+
+	private void merge(int startIndex, int midIndex, int endIndex) {
+		int leftIndex = startIndex;
+		int rightIndex = midIndex + 1;
+		int tempIndex = startIndex;
+		while (leftIndex <= midIndex && rightIndex <= endIndex) {
+			compareCount++;
+			assignCount++;
+			if (sortedArray[leftIndex] <= sortedArray[rightIndex]) {
 				tempArray[tempIndex++] = sortedArray[leftIndex++];
-			}
-			while (rightIndex <= endIndex) {
-				assignCount++;
+			} else {
 				tempArray[tempIndex++] = sortedArray[rightIndex++];
 			}
-			for (int i = startIndex; i <= endIndex; i++) {
-				assignCount++;
-				sortedArray[i] = tempArray[i];
-			}
+		}
+		while (leftIndex <= midIndex) {
+			assignCount++;
+			tempArray[tempIndex++] = sortedArray[leftIndex++];
+		}
+		while (rightIndex <= endIndex) {
+			assignCount++;
+			tempArray[tempIndex++] = sortedArray[rightIndex++];
+		}
+		for (int i = startIndex; i <= endIndex; i++) {
+			assignCount++;
+			sortedArray[i] = tempArray[i];
 		}
 	}
 
